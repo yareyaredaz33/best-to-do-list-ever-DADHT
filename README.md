@@ -2,4 +2,4 @@
 that would be best to do list you'll ever use we promise.
 
 
-Team members: Antoniuk Daria, Bacho Mariya-Tereza, Beshta Danylo, Haplyk Halyna, Pavlyk Anna
+Team members: Antonyuk Dariya, Bacho Mariya-Tereza, Beshta Danylo, Haplyk Halyna, Pavlyk Anna
