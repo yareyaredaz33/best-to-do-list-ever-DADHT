@@ -1,7 +1,4 @@
 
-a {
-    color: #0366d6; /* Blue color for links */
-}
 
 .btn:focus,
 .btn:active:focus,
@@ -19,17 +16,13 @@ code {
     color: #fff; /* White text color */
     background-color: #1b6ec2; /* Dark blue background color */
     border-color: #1861ac; /* Border color */
-    font-weight: bold; /* Adding bold font weight */
-    padding: 0.5rem 1rem; /* Adding padding for better button appearance */
-    border-radius: 0.25rem; /* Adding border radius for rounded corners */
+    font-weight: bold; 
+    padding: 0.5rem 1rem; 
 }
 
 
-/* Importing Bootstrap SCSS file. */
 @import "node_modules/bootstrap/scss/bootstrap";
 
-/* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
-/* Importing Bootstrap Icons SCSS file. */
 @import "node_modules/bootstrap-icons/font/bootstrap-icons";
