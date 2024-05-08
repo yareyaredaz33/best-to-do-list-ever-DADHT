@@ -1,23 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
 
-/* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6; /* Blue color for links */
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; /* Adding a white inner shadow and a blue outer shadow */
 }
 
 code {
-  color: #e01a76;
+    color: #e01a76; 
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff; /* White text color */
+    background-color: #1b6ec2; /* Dark blue background color */
+    border-color: #1861ac; /* Border color */
+    font-weight: bold; /* Adding bold font weight */
+    padding: 0.5rem 1rem; /* Adding padding for better button appearance */
+    border-radius: 0.25rem; /* Adding border radius for rounded corners */
 }
+
 
 /* Importing Bootstrap SCSS file. */
 @import "node_modules/bootstrap/scss/bootstrap";
