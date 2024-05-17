@@ -1,6 +1,9 @@
 <div class="container">
   <div>Tasks for today</div>
   <div *ngFor="let task of tasksForToday" class="task">
+    <div class="todo-item-checkbox">
+      <input type="checkbox" [(ngModel)]="task.done" (change)="updateItem(task)" />
+    </div>
     <div>{{task.title}}</div>
     <div>{{task.note}}</div>
     <div [ngClass]="{'done': task.done, 'not-done': !task.done}">

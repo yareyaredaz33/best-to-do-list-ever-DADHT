@@ -29,6 +29,7 @@ export class TodoTodayComponent implements OnInit {
 
   constructor(
     private listsClient: TodoListsClient,
+    private itemsClient: TodoItemsClient,
   ) {}
 
   ngOnInit(): void {
@@ -59,6 +60,29 @@ export class TodoTodayComponent implements OnInit {
     return date.getFullYear() === today.getFullYear() &&
       date.getMonth() === today.getMonth() &&
       date.getDate() === today.getDate();
+  }
+  updateItem(item: TodoItemDto, pressedEnter: boolean = false): void {
+    const isNewItem = item.id === 0;
+
+
+    if (item.id === 0) {
+      this.itemsClient
+        .createTodoItem({ title: item.title, listId: this.selectedList.id } as CreateTodoItemCommand)
+        .subscribe(
+          result => {
+            item.id = result;
+          },
+          error => console.error(error)
+        );
+    } else {
+      this.itemsClient.updateTodoItem(item.id, item as UpdateTodoItemCommand).subscribe(
+        () => console.log('Update succeeded.'),
+        error => console.error(error)
+      );
+    }
+
+    this.selectedItem = null;
+
   }
 
 }
