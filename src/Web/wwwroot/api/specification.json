@@ -423,6 +423,10 @@
           "note": {
             "type": "string",
             "nullable": true
+          },
+          "deadline": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -522,6 +526,10 @@
             "format": "int32"
           },
           "note": {
+            "type": "string",
+            "nullable": true
+          },
+          "deadline": {
             "type": "string",
             "nullable": true
           }

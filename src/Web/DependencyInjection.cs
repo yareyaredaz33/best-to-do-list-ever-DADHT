@@ -43,16 +43,11 @@ public static class DependencyInjection
         {
             configure.Title = "ProjectUniversity API";
 
-            // Add the fluent validations schema processor
-<<<<<<< HEAD:src/Web/DependencyInjection.cs
-            var fluentValidationSchemaProcessor = 
-=======
-            var fluentValidationSchemaProcessor =
->>>>>>> 033ed43b6eda26cbae14521526d162e7f179ff7a:ProjectUniversity/src/Web/DependencyInjection.cs
-                sp.CreateScope().ServiceProvider.GetRequiredService<FluentValidationSchemaProcessor>();
+           
+  
+            var fluentValidationSchemaProcessor = sp.CreateScope().ServiceProvider.GetRequiredService<FluentValidationSchemaProcessor>();
 
-            // BUG: SchemaProcessors is missing in NSwag 14 (https://github.com/RicoSuter/NSwag/issues/4524#issuecomment-1811897079)
-            // configure.SchemaProcessors.Add(fluentValidationSchemaProcessor);
+     
 
         });
 

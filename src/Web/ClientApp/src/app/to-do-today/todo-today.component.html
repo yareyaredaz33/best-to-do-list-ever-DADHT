@@ -1,0 +1,10 @@
+<div class="container">
+  <div>Tasks for today</div>
+  <div *ngFor="let task of tasksForToday" class="task">
+    <div>{{task.title}}</div>
+    <div>{{task.note}}</div>
+    <div [ngClass]="{'done': task.done, 'not-done': !task.done}">
+      {{task.done ? 'Done' : 'Not Done'}}
+    </div>
+  </div>
+</div>

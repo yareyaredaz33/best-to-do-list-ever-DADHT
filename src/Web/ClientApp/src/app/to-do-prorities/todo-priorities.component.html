@@ -1,0 +1,45 @@
+<div class="grid-container">
+  <div class="container">
+    <div>Not urgent</div>
+    <div *ngFor="let taskZero of tasksZero" class="task">
+      <div>{{taskZero.title}}</div>
+      <div>{{taskZero.note}}</div>
+      <div [ngClass]="{'done': taskZero.done, 'not-done': !taskZero.done}">
+        {{taskZero.done ? 'Done' : 'Not Done'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div>Insignificant</div>
+    <div *ngFor="let taskOne of tasksOne" class="task">
+      <div>{{taskOne.title}}</div>
+      <div>{{taskOne.note}}</div>
+      <div [ngClass]="{'done': taskOne.done, 'not-done': !taskOne.done}">
+        {{taskOne.done ? 'Done' : 'Not Done'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div>Urgent</div>
+    <div *ngFor="let taskTwo of tasksTwo" class="task">
+      <div>{{taskTwo.title}}</div>
+      <div>{{taskTwo.note}}</div>
+      <div [ngClass]="{'done': taskTwo.done, 'not-done': !taskTwo.done}">
+        {{taskTwo.done ? 'Done' : 'Not Done'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div>Significant</div>
+    <div *ngFor="let taskThree of tasksThree" class="task">
+      <div>{{taskThree.title}}</div>
+      <div>{{taskThree.note}}</div>
+      <div [ngClass]="{'done': taskThree.done, 'not-done': !taskThree.done}">
+        {{taskThree.done ? 'Done' : 'Not Done'}}
+      </div>
+    </div>
+  </div>
+</div>

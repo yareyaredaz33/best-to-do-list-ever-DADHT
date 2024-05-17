@@ -1,6 +1,7 @@
 import { Component, TemplateRef, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { TodoListsClient, TodoItemsClient,
+import {
+  TodoListsClient, TodoItemsClient,
   TodoListDto, TodoItemDto, LookupDto,
   CreateTodoListCommand, UpdateTodoListCommand,
   CreateTodoItemCommand, UpdateTodoItemCommand, UpdateTodoItemDetailCommand
@@ -29,13 +30,14 @@ export class TodoComponent implements OnInit {
     private listsClient: TodoListsClient,
     private itemsClient: TodoItemsClient,
     private modalService: BsModalService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.listsClient.getTodoLists().subscribe(
       result => {
         this.lists = result.lists;
         this.priorityLevels = result.priorityLevels;
+        console.log(this.lists, this.priorityLevels)
         if (this.lists.length) {
           this.selectedList = this.lists[0];
         }
@@ -150,6 +152,7 @@ export class TodoComponent implements OnInit {
 
         this.selectedItem.priority = this.itemDetailsEditor.priority;
         this.selectedItem.note = this.itemDetailsEditor.note;
+        this.selectedItem.deadline = this.itemDetailsEditor.deadline;
         this.itemDetailsModalRef.hide();
         this.itemDetailsEditor = {};
       },
@@ -186,7 +189,7 @@ export class TodoComponent implements OnInit {
 
     if (item.id === 0) {
       this.itemsClient
-          .createTodoItem({ title: item.title, listId: this.selectedList.id } as CreateTodoItemCommand)
+        .createTodoItem({ title: item.title, listId: this.selectedList.id } as CreateTodoItemCommand)
         .subscribe(
           result => {
             item.id = result;
@@ -194,7 +197,7 @@ export class TodoComponent implements OnInit {
           error => console.error(error)
         );
     } else {
-        this.itemsClient.updateTodoItem(item.id, item as UpdateTodoItemCommand).subscribe(
+      this.itemsClient.updateTodoItem(item.id, item as UpdateTodoItemCommand).subscribe(
         () => console.log('Update succeeded.'),
         error => console.error(error)
       );
@@ -218,9 +221,9 @@ export class TodoComponent implements OnInit {
     } else {
       this.itemsClient.deleteTodoItem(item.id).subscribe(
         () =>
-          (this.selectedList.items = this.selectedList.items.filter(
-            t => t.id !== item.id
-          )),
+        (this.selectedList.items = this.selectedList.items.filter(
+          t => t.id !== item.id
+        )),
         error => console.error(error)
       );
     }
